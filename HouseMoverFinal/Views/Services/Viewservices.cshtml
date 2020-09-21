@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HouseMoverFinal.Models.Service>
+
+@{
+    ViewBag.Title = "Viewservices";
+}
+
+<div class="container">
+    <div class="row"> 
+        <h2>Services</h2>
+        <hr/>
+        @foreach (var item in Model)
+        { 
+             <hr/> <hr /> <br/><br />
+            <div class="col-md-4">
+                <img src="https://ipartnermedia.com/wp-content/uploads/2019/06/home-service-690.jpg" alt="House " class="img img-thumbnail"/>
+                <br/>
+                <h1>   @Html.DisplayFor(modelItem => item.Name) </h1>
+            </div>
+        }
+        </div>
+</div>
+
+

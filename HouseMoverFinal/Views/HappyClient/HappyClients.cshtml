@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HouseMoverFinal.Models.Client>
+
+@{
+    ViewBag.Title = "HappyClients";
+}
+
+<h2>Happy Clients</h2>
+
+<p>
+    @Html.ActionLink("Add New Details", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Services)
+        </th>
+        <th>Edit </th>
+        <th>Delete </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Services)
+        </td>
+        <td>
+            <span class="btn btn-primary">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </span>
+            <span class="btn btn-warning">
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })</span>
+        </td>
+    </tr>
+}
+
+</table>
+<br/>
+
+<a href="@Url.Action("AdminLogin","Login")" > back to Dashboard</a>
